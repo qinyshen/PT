@@ -18,10 +18,12 @@ function dlpaper(index) {
             var content =  url1 + "pdf" + url2 + ".pdf";
             document.getElementById("title").innerText = content;
             var fileName = paper['Title'] + ".pdf";
-            document.createElement('a');
+            var aTag = document.createElement('a');
+            //var blob = new Blob([content]);
             aTag.download = fileName;
             aTag.href = content;
             aTag.click();
+            // URL.revokeObjectURL(blob);
         }
     };
     req.open('GET', url + '?' + params, true);
