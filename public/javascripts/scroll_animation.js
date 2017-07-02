@@ -21,7 +21,7 @@ function winScroll(e) {
     if (paper_num < 10) {
         if (distance + height - 500 - table.clientHeight > 0) {
             paper_num += 1;
-            addpaper((paper_num - 1).toString());
+            getpaper((49 - paper_num + 1).toString());
         }
     }
 
