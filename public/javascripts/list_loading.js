@@ -28,7 +28,7 @@ function addpaper(paper, index){
         "<tr style='height: 25px'><td>GitHub</td></tr>" +
         "<tr style='height: 500px'><td style=\"vertical-align:text-top\">" + paper['Abstract'] + "</td></tr>" +
         "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Subject'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td id=" + index.toString() + " style=\"text-align: right\">" + paper['Stars'] + "</td></tr></table></td></tr>" +
-        "<tr style='height: 25px'><td><input type=\"button\" style=\"width:25%\" value=\"赞\" onclick=\"addStar(" + index + ")\"/><input type=\"button\" style=\"width:25%\" value=\"下载\" onclick=\"dlpaper()\"/></td></tr>" +
+        "<tr style='height: 25px'><td><input type=\"button\" style=\"width:25%\" value=\"赞\" onclick=\"addStar(" + index + ")\"/><input type=\"button\" style=\"width:25%\" value=\"评论\"/><input type=\"button\" style=\"width:25%\" value=\"下载\" onclick=\"dlpaper(" + index + ")\"/><input type=\"button\" style=\"width:25%\" value=\"收藏\"/></td></tr>" +
         "</tbody></table>";
     newRow.appendChild(td);
     ibody.appendChild(newRow);
