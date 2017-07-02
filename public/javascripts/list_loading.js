@@ -17,18 +17,18 @@ function addpapers(){
         getpaper(49-i);
 }
 
-function addpaper(paper){
+function addpaper(paper, index){
     var ibody=document.getElementById("table").lastChild;
     var newRow=document.createElement("tr");
     var td=document.createElement("td");
     td.innerHTML="<table border='1' bgcolor='white' style=\"width: 100%;height:auto;margin-bottom: 20px\"><tbody>" +
         "<tr style='height: 25px'><td>" + paper['Title'] + "</td></tr>" +
         "<tr style='height: 25px'><td>" + paper['Authors'] + "</td></tr>" +
-        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Date'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Address'] + "</td></tr></table></td></tr>" +
+        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Date'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td><a id=\"arXiv\" target=\“_blank\” href=\"" + paper['Address'] + "\">" + paper['Address'].split("//")[1]  + "</a></td></tr></table></td></tr>" +
         "<tr style='height: 25px'><td>GitHub</td></tr>" +
         "<tr style='height: 500px'><td>" + paper['Abstract'] + "</td></tr>" +
-        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Subject'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Stars'] + "</td></tr></table></td></tr>" +
-        "<tr style='height: 25px'><td><input type=\"button\" value=\"赞\" onclick=\"addStar()\"/></td></tr>" +
+        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Subject'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td id=" + index.toString() + " style=\"text-align: right\">" + paper['Stars'] + "</td></tr></table></td></tr>" +
+        "<tr style='height: 25px'><td><input type=\"button\" value=\"赞\" onclick=\"addStar(" + index + ")\"/></td></tr>" +
         "</tbody></table>";
     newRow.appendChild(td);
     ibody.appendChild(newRow);
@@ -46,7 +46,7 @@ function getpaper(index){
             var paper = req.responseText;
             paper = JSON.parse(paper);
             console.log('success');
-            addpaper(paper);
+            addpaper(paper, index);
         }
     };
     req.open('GET', url + '?' + params, true);

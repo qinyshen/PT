@@ -11,4 +11,8 @@ router.get('/getpapers', function(req, res, next) {
     paper.get(req, res, next);
 });
 
+router.get('/addstars', function(req, res, next) {
+    paper.add(req, res, next);
+});
+
 module.exports = router;
