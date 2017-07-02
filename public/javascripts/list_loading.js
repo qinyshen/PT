@@ -9,12 +9,11 @@ var paper_height = 300;
 
 function addpapers(){
     var distance = window.pageYOffset;
-    num = Math.floor((height + window.pageYOffset - 500) / paper_height + 1.0);
+    var num = Math.floor((height + window.pageYOffset - 500) / paper_height + 1.0);
     if(num >= 10)
         num = 10;
     paper_num += num;
-    for(var i=0;i<num;i++)
-        getpaper(49-i);
+    search_max();
 }
 
 function addpaper(paper, index){
@@ -27,29 +26,9 @@ function addpaper(paper, index){
         "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Date'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td><a id=\"arXiv\" target=\“_blank\” href=\"" + paper['Address'] + "\">" + paper['Address'].split("//")[1]  + "</a></td></tr></table></td></tr>" +
         "<tr style='height: 25px'><td>GitHub</td></tr>" +
         "<tr style='height: 500px'><td style=\"vertical-align:text-top\">" + paper['Abstract'] + "</td></tr>" +
-        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Subject'] + "</td></tr></table><table align=\"right\" style=\"width:50%;height: auto;\"><tr><td id=" + index.toString() + " style=\"text-align: right\">" + paper['Stars'] + "</td></tr></table></td></tr>" +
+        "<tr style='height: 25px'><td><table align=\"left\" style=\"width:50%;height: auto;\"><tr><td>" + paper['Subject'] + "</td></tr></table><table align=\"center\" style=\"width:50%;height: auto;\"><tr><td id=" + index.toString() + " style=\"text-align: center\">" + paper['Stars'] + "</td></tr></table></td></tr>" +
         "<tr style='height: 25px'><td><input type=\"button\" style=\"width:25%\" value=\"赞\" onclick=\"addStar(" + index + ")\"/><input type=\"button\" style=\"width:25%\" value=\"评论\"/><input type=\"button\" style=\"width:25%\" value=\"下载\" onclick=\"dlpaper(" + index + ")\"/><input type=\"button\" style=\"width:25%\" value=\"收藏\"/></td></tr>" +
         "</tbody></table>";
     newRow.appendChild(td);
     ibody.appendChild(newRow);
-}
-
-function getpaper(index){
-    var url = '/data/getpapers';
-    var params = [
-        'index='+index.toString()
-    ];
-    var req = new XMLHttpRequest();
-    req.onreadystatechange = function() {
-        if (req.readyState=== 4) {
-            var responseHeaders = req.getAllResponseHeaders();
-            var paper = req.responseText;
-            paper = JSON.parse(paper);
-            console.log('success');
-            addpaper(paper, index);
-        }
-    };
-    req.open('GET', url + '?' + params, true);
-    req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    req.send(null);
 }

@@ -13,7 +13,7 @@ function addStar(index){
             var star = req.responseText;
             star = JSON.parse(star);
             if(star["msg"]==="点赞成功"){
-                var num = parseInt(document.getElementById(index.toString()).innerText)
+                var num = parseInt(document.getElementById(index.toString()).innerText);
                 document.getElementById(index.toString()).innerText = (num + 1).toString();
             }
         }

@@ -15,4 +15,8 @@ router.get('/addstars', function(req, res, next) {
     paper.add(req, res, next);
 });
 
+router.get('/searchmax', function(req, res, next) {
+    paper.search(req, res, next);
+});
+
 module.exports = router;

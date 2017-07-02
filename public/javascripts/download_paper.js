@@ -16,10 +16,9 @@ function dlpaper(index) {
             url1 = paper['Address'].split("abs")[0];
             url2 = paper['Address'].split("abs")[1];
             var content =  url1 + "pdf" + url2 + ".pdf";
-            document.getElementById("title").innerText = content;
             var fileName = paper['Title'] + ".pdf";
             var aTag = document.createElement('a');
-            //var blob = new Blob([content]);
+            // var blob = new Blob([content]);
             aTag.download = fileName;
             aTag.href = content;
             aTag.click();
