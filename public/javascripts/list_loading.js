@@ -10,8 +10,8 @@ var paper_height = 300;
 function addpapers(){
     var distance = window.pageYOffset;
     var num = Math.floor((height + window.pageYOffset - 500) / paper_height + 1.0);
-    if(num >= 10)
-        num = 10;
+    if(num >= 5)
+        num = 5;
     paper_num += num;
     search_max();
 }

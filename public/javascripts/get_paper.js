@@ -1,6 +1,8 @@
 /**
  * Created by zhangmingjie on 2017/7/3.
  */
+var maxium = 0;
+
 function getpaper(index){
     var url = '/data/getpapers';
     var params = [

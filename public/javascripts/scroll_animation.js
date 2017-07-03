@@ -18,10 +18,10 @@ function winScroll(e) {
         subtitle.style.opacity = (250 - subtitle_container.clientHeight - distance) / (250 - subtitle_container.clientHeight);
     }
 
-    if (paper_num < 10) {
+    if (paper_num < 20) {
         if (distance + height - 500 - table.clientHeight > 0) {
             paper_num += 1;
-            getpaper((49 - paper_num + 1).toString());
+            getpaper(maxium - paper_num + 1);
         }
     }
 
