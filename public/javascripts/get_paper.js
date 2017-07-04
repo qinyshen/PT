@@ -34,6 +34,7 @@ function search_max(){
             max = JSON.parse(max);
             console.log('success');
             maxium = max['max(No)'];
+            document.getElementById("bg").style.height = 850 * maxium + "px";
             for(var i=0;i<paper_num;i++)
                 getpaper(maxium-i);
         }

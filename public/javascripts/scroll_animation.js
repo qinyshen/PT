@@ -18,7 +18,7 @@ function winScroll(e) {
         subtitle.style.opacity = (250 - subtitle_container.clientHeight - distance) / (250 - subtitle_container.clientHeight);
     }
 
-    if (paper_num < 20) {
+    if (paper_num < maxium) {
         if (distance + height - 500 - table.clientHeight > 0) {
             paper_num += 1;
             getpaper(maxium - paper_num + 1);
