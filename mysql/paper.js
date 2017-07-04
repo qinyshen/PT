@@ -30,7 +30,7 @@ module.exports = {
 
             // 建立连接，向表中插入值
             // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
-            connection.query($sql.get_paper_data, [param.index], function(err, result) {
+            connection.query($sql.get_paper_data, [param.category,param.index], function(err, result) {
                 // 以json形式，把操作结果返回给前台页面
                 jsonWrite(res, result[0]);
                 // 释放连接
@@ -46,7 +46,7 @@ module.exports = {
 
             // 建立连接，向表中插入值
             // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
-            connection.query($sql.add_stars , [param.index], function(err, result) {
+            connection.query($sql.add_stars , [param.category, param.index], function(err, result) {
                 // 以json形式，把操作结果返回给前台页面
                 if(result.affectedRows > 0) {
                     result = {
@@ -68,7 +68,7 @@ module.exports = {
 
             // 建立连接，向表中插入值
             // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
-            connection.query($sql.get_latest_node , [], function(err, result) {
+            connection.query($sql.get_latest_node , [param.category], function(err, result) {
                 // 以json形式，把操作结果返回给前台页面
                 jsonWrite(res, result[0]);
                 // 释放连接

@@ -5,7 +5,7 @@ window.addEventListener('load', addpapers, false);
 var paper_num = 0;
 var height= document.body.clientHeight;
 var paper_height = 300;
-
+var Subject = "cs_AI";
 
 function addpapers(){
     var distance = window.pageYOffset;

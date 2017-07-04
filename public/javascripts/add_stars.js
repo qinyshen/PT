@@ -4,6 +4,7 @@
 function addStar(index){
     var url = '/data/addstars';
     var params = [
+        'category='+Subject,
         'index='+index.toString()
     ];
     var req = new XMLHttpRequest();

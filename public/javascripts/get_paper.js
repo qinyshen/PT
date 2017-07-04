@@ -6,6 +6,7 @@ var maxium = 0;
 function getpaper(index){
     var url = '/data/getpapers';
     var params = [
+        'category='+Subject,
         'index='+index.toString()
     ];
     var req = new XMLHttpRequest();
@@ -18,14 +19,16 @@ function getpaper(index){
             addpaper(paper, index);
         }
     };
-    req.open('GET', url + '?' + params, true);
+    req.open('GET', url + '?' + params.join('&'), true);
     req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     req.send(null);
 }
 
 function search_max(){
     var url = '/data/searchmax';
-    var params = [];
+    var params = [
+        'category='+Subject
+    ];
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (req.readyState=== 4) {

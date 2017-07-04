@@ -11,22 +11,22 @@ while True:
         # Connect to the database
         connection = pymysql.connect(user='root', password='root', database='PT')
         cursor = connection.cursor()
-        commit = "CREATE TABLE IF NOT EXISTS papers (No int, Date VARCHAR(50), Title VARCHAR(200), Authors VARCHAR(200), " \
+        commit = "CREATE TABLE IF NOT EXISTS stat_ML (No int, Date VARCHAR(50), Title VARCHAR(200), Authors VARCHAR(200), " \
                  "Subject VARCHAR(200), Address VARCHAR(100), GitHub VARCHAR(100), Abstract VARCHAR(2000), Stars int, " \
                  "iterm1 VARCHAR(200), iterm2 VARCHAR(200)); "
         cursor.execute(commit)
 
-        catalogue_url = "https://arxiv.org/list/cs.AI/pastweek?show=50"
+        catalogue_url = "https://arxiv.org/list/stat.ML/pastweek?show=50"
         catalogue = urllib2.urlopen(catalogue_url).read()
         papers = re.findall(r'<a href="(.*?)" title="Abstract">.*?</a>', catalogue)
         papers.reverse()
 
-        commit = "select max(No) from papers;"
+        commit = "select max(No) from stat_ML;"
         cursor.execute(commit)
         num = cursor.fetchall()[0][0]
 
         if not num is None:
-            commit = "select Address from papers where No=%s;" % num
+            commit = "select Address from stat_ML where No=%s;" % num
             cursor.execute(commit)
             node = cursor.fetchall()[0][0].split("org")[1]
             try:
@@ -60,7 +60,7 @@ while True:
             Stars = 0
             with connection.cursor() as cursor:
                 # Create a new record
-                sql = "INSERT INTO papers"
+                sql = "INSERT INTO stat_ML"
                 sql += "(No, Date, Title, Authors, Subject, Address, Abstract, Stars) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
                 cursor.execute(sql, (No, Date, Title, Author, Subject, Address, Abstract, Stars))
             connection.commit()
@@ -71,4 +71,5 @@ while True:
         time.sleep(60 * 30)
     except urllib2.URLError:
         pass
+
 
