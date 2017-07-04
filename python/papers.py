@@ -70,5 +70,6 @@ while True:
         connection.close()
         time.sleep(60 * 30)
     except urllib2.URLError:
+        print "Connection Error & Retry!"
         pass
 
