@@ -6,7 +6,6 @@ var maxium = 0;
 function getpaper(index){
     var url = '/data/getpapers';
     var params = [
-        'category='+Subject,
         'index='+index.toString()
     ];
     var req = new XMLHttpRequest();
@@ -26,9 +25,7 @@ function getpaper(index){
 
 function search_max(){
     var url = '/data/searchmax';
-    var params = [
-        'category='+Subject
-    ];
+    var params = [];
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (req.readyState=== 4) {

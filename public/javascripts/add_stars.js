@@ -4,7 +4,6 @@
 function addStar(index){
     var url = '/data/addstars';
     var params = [
-        'category='+Subject,
         'index='+index.toString()
     ];
     var req = new XMLHttpRequest();
@@ -19,7 +18,7 @@ function addStar(index){
             }
         }
     };
-    req.open('GET', url + '?' + params, true);
+    req.open('GET', url + '?' + params.join('&'), true);
     req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     req.send(null);
 }
