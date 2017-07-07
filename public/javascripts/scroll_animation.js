@@ -33,12 +33,14 @@ function winScroll(e) {
         title_container.style.marginTop = 200 - title_container.clientHeight / 2 - distance + "px";
         title_container.style.zIndex = 9;
         title.style.fontSize = "50px";
+        title.style.color = "black";
     }
     else{
         if (distance>=0) {
             title_container.style.marginTop = - document.getElementById("bar").clientHeight / 2 + "px";
             title_container.style.zIndex = 11;
             title.style.fontSize = "38px";
+            title.style.color = "white";
         }
     }
 }

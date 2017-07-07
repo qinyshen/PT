@@ -8,14 +8,17 @@
                 height:100%;
                 margin:auto;
                 width:100%;}
-            h1 {color: white;font-size: 50px}
             p {color:black;font-size:20px}
-            td {font-size: 25px}
+            td {font-size: 25px;line-height: 40px}
             a:link {color: dodgerblue;text-align: center;font-size:20px;text-decoration: none}
             a:hover {text-decoration:underline;color: dodgerblue;}
             a:visited {text-decoration: none;color: dodgerblue}
             img {max-height: 100%}
         </style>
+        <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
+        <script src="/node_modules/material-design-lite/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
 
     </head>
 
@@ -27,20 +30,20 @@
     <script type="text/javascript" async src="../javascripts/users.js"></script>
 
 	<body>
-        <div id="bg" style="height: 5000px;background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(60, 60, 85) 50%, rgb(115, 115, 135))";>
+        <div id="bg" style="height: 5000px;background: ghostwhite;">
             <div id="bar" style="background-color: darkgray;width: 100%;height: 55px;float: left;position:fixed;z-index:10;opacity: 0.9">
                 <div style="width:25%;float:right">
-                    <input type="button" style="width:45%" value="登录" onclick="login()"/>
-                    <input type="button" style="width:45%" value="注册" onclick="register()"/>
+                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="login()">登录</button>
+                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="register()">注册</button>
                 </div>
             </div>
             
-            <div id="title_container" style="width: 100%;height: 100px;float: left;position: fixed;margin-top: 150px;z-index:9">
-                <h1 id="title" align="center">Papers Together!</h1>
+            <div id="title_container"  style="width: 100%;height: 100px;float: left;position: fixed;margin-top: 150px;z-index:9; ;color: black">
+                <h1 id="title" class="mdl-typography--title" align="center" style="font-size: 50px">Papers Together!</h1>
             </div>
 
-            <div id="subtitle_container" style="width: 100%;height: 75px;float: left;position: fixed;margin-top: 250px;z-index:9">
-                <h1 id="subtitle" align="center" style="font-size: 30px">连接一切卓越的思想</h1>
+            <div id="subtitle_container" style="width: 100%;height: 75px;float: left;position: fixed;margin-top: 250px;z-index:9;color: black">
+                <h1 id="subtitle" class="mdl-typography--body-2" align="center" style="font-size: 30px">连接一切卓越的思想</h1>
             </div>
 
             <div id="table_container" align="center" style="width:100%; position: fixed;margin-top: 500px;z-index: 8;">
