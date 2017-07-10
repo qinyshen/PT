@@ -15,8 +15,8 @@ function winScroll(e) {
 
     document.getElementById("table_container").style.marginTop = 500 - distance + "px";
 
-    if (distance >= 0 || distance <= 250 - subtitle_container.clientHeight){
-        subtitle.style.opacity = (250 - subtitle_container.clientHeight - distance) / (250 - subtitle_container.clientHeight);
+    if (distance >= 0 || distance <= 300 - subtitle_container.clientHeight){
+        subtitle.style.opacity = (300 - subtitle_container.clientHeight - distance) / (300 - subtitle_container.clientHeight);
     }
 
     if (paper_num < maxium) {
@@ -26,7 +26,7 @@ function winScroll(e) {
         }
     }
 
-    if (150 - distance <= 0) {
+    if (200 - distance <= 0) {
         title0.style.display="";
         title1.style.display="none";
     }
