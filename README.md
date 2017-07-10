@@ -36,3 +36,11 @@ Papers Together！
 
 ## 2017-7-07
 * 把按钮转化为Material Design
+
+## 2017-7-08
+* 将风格向Material Design迁移
+
+## 2017-7-10
+* 加入用户登录和注册界面
+* 构建数据库结构
+* 加入用户界面和领域TAB
