@@ -35,4 +35,11 @@ function winScroll(e) {
         title0.style.display="none";
     }
 
+    if (distance < 0) {
+        title_container.style.position="fixed";
+    }
+    else{
+        title_container.style.position="";
+    }
+
 }
