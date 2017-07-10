@@ -30,11 +30,43 @@
     <script type="text/javascript" async src="../javascripts/users.js"></script>
 
 	<body>
+
+
+        <!-- 登录框 -->
+
+        <div id=win style="display:none; POSITION:absolute; left:50%; top:50%; width:600px; height:400px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#edf; text-align:center； z-index:9999"><div class="login_putin">
+            <ul>
+                <li><input type="username"  id = "login_username" ></li>
+                <li><input type="password"  id = "login_password"></li>
+            </ul>
+        </div>
+        <div class="login_btn">
+             <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="login()">登录</button>
+        </div><br><a href="javascript:closeLogin();">关闭登录框</a></div>
+
+
+
+        <!-- 注册 -->
+
+        <div id=reg style="display:none; POSITION:absolute; left:50%; top:50%; width:600px; height:400px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#edf; text-align:center； z-index:9999"><div class="register_putin">
+            <ul>
+                <li><input type="username" id = "register_username"></li>
+                <li><input type="password" id = "register_password"></li>
+            </ul>
+        </div>
+        <div class="register_btn">
+            <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="register()">注册</button>
+        </div><br><a href="javascript:closeRegister();">关闭注册框</a></div>
+
+
+
+
+
         <div id="bg" style="height: 5000px;background: ghostwhite;">
             <div id="bar" style="background-color: darkgray;width: 100%;height: 55px;float: left;position:fixed;z-index:10;opacity: 0.9">
                 <div style="width:25%;float:right">
-                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="login()">登录</button>
-                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="register()">注册</button>
+                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="openLogin()">登录</button>
+                    <button class="mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp" style="background-color: lightskyblue;width:45%;height:100%" onclick="openRegister()">注册</button>
                 </div>
             </div>
             
@@ -43,7 +75,7 @@
             </div>
 
             <div id="subtitle_container" style="width: 100%;height: 75px;float: left;position: fixed;margin-top: 250px;z-index:9;color: black">
-                <h1 id="subtitle" class="mdl-typography--body-2" align="center" style="font-size: 30px">连接一切卓越的思想</h1>
+                <h1 id="subtitle" class="2mdl-typography--body-2" align="center" style="font-size: 30px">连接一切卓越的思想</h1>
             </div>
 
             <div id="table_container" align="center" style="width:100%; position: fixed;margin-top: 500px;z-index: 8;">
