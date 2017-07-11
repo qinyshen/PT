@@ -1,11 +1,11 @@
 INSERT INTO Users  (Username, Password) VALUES ('AAA', 'BB'),('AA', 'BB'),('A', 'BB');
 
-INSERT INTO Papers  (Title,Address, GitHub,Abstract,Stars,Authors,Pulish_time) VALUES 
+INSERT INTO Papers  (Title, Address, GitHub, Abstract,Stars,Authors,Pulish_time) VALUES
 ('fasdfds', 'fdsaf', 'fasdfds', 'fdsaf', 3, 'fdsaf', STR_TO_DATE('2014-07-09', '%Y-%m-%d')),
 ('fasdfds', 'fdsaf', 'fasdfds', 'fdsaf', 3, 'fdsaf', STR_TO_DATE('2014-07-10', '%Y-%m-%d'));
 
 
-INSERT INTO Subjects  (Name) VALUES 
+INSERT INTO Subjects (Name) VALUES
 ('sbsb'),
 ('sbsbbss');
 
