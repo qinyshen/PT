@@ -6,7 +6,8 @@ window.addEventListener('scroll', winScroll);
 function winScroll(e) {
     var distance = window.pageYOffset;
     var title_container = document.getElementById("title_container");
-    var title = document.getElementById("title");
+    var title0 = document.getElementById("title0");
+    var title1 = document.getElementById("title1");
     var subtitle_container = document.getElementById("subtitle_container");
     var subtitle = document.getElementById("subtitle");
     var table = document.getElementById("table");
@@ -14,8 +15,8 @@ function winScroll(e) {
 
     document.getElementById("table_container").style.marginTop = 500 - distance + "px";
 
-    if (distance >= 0 || distance <= 250 - subtitle_container.clientHeight){
-        subtitle.style.opacity = (250 - subtitle_container.clientHeight - distance) / (250 - subtitle_container.clientHeight);
+    if (distance >= 0 || distance <= 300 - subtitle_container.clientHeight){
+        subtitle.style.opacity = (300 - subtitle_container.clientHeight - distance) / (300 - subtitle_container.clientHeight);
     }
 
     if (paper_num < maxium) {
@@ -25,22 +26,20 @@ function winScroll(e) {
         }
     }
 
-    if (distance <= 0){
-        subtitle_container.style.marginTop = 250 - distance + "px";
-    }
-
-    if (200 - title_container.clientHeight / 2 - distance > - document.getElementById("bar").clientHeight / 2) {
-        title_container.style.marginTop = 200 - title_container.clientHeight / 2 - distance + "px";
-        title_container.style.zIndex = 9;
-        title.style.fontSize = "50px";
-        title.style.color = "black";
+    if (200 - distance <= 0) {
+        title0.style.display="";
+        title1.style.display="none";
     }
     else{
-        if (distance>=0) {
-            title_container.style.marginTop = - document.getElementById("bar").clientHeight / 2 + "px";
-            title_container.style.zIndex = 11;
-            title.style.fontSize = "38px";
-            title.style.color = "white";
-        }
+        title1.style.display="";
+        title0.style.display="none";
     }
+
+    if (distance < 0) {
+        title_container.style.position="fixed";
+    }
+    else{
+        title_container.style.position="";
+    }
+
 }

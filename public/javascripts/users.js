@@ -1,6 +1,7 @@
 /**
  * Created by zhangmingjie on 2017/7/7.
  */
+var usr = null;
 
 function login(){
 	var username = document.getElementById("login_username").value;
@@ -11,6 +12,7 @@ function login(){
 }
 
 function openLogin(){
+    closeRegister();
 	document.getElementById("win").style.display="";
 }
 
@@ -29,6 +31,7 @@ function register(){
 
 
 function openRegister(){
+    closeLogin();
 	document.getElementById("reg").style.display="";
 }
 
@@ -38,7 +41,7 @@ function closeRegister(){
 
 
 function check_user(){
-    if(username === null)
+    if(usr === null)
         return 0;
     else
         return 1

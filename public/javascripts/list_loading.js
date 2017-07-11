@@ -28,10 +28,10 @@ function addpaper(paper, index){
         "<tr style='height: 500px;' bgcolor='white'><td style='vertical-align:text-top;padding:0 20px 0 20px;'>" + paper['Abstract'] + "</td></tr>" +
         "<tr style='height: 40px;' bgcolor='white'><td style='padding:0 20px 0 20px;'><table align='left' style='width:50%;height: auto;'><tr><td>" + paper['Subject'] + "</td></tr></table><table align='center' style='width:50%;height: auto;'><tr><td id=" + index.toString() + " style='text-align: center'>" + paper['Stars'] + "</td></tr></table></td></tr>" +
         "<tr style='height: 40px; background-color:rgba(0,0,0,0)'>" +
-        "<td><button class='mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp' style='background-color: lightskyblue;width:20%;margin-left: 4%' onclick='addStar(" + index + ")'>赞</button>"+
-        "<button class='mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp' style='background-color: lightskyblue;width:20%;margin-left: 4%'>评论</button>" +
-        "<button class='mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp' style='background-color: lightskyblue;width:20%;margin-left: 4%' onclick='dlpaper(" + index + ")'>下载</button>" +
-        "<button class='mdl-button mdl-button--raised mdl-button--accent mdl-shadow--4dp' style='background-color: lightskyblue;width:20%;margin-left: 4%'>收藏</button></td></tr>" +
+        "<td><button class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-shadow--4dp' style='width:20%;margin-left: 4%' onclick='addStar(" + index + ")'>点赞</button>"+
+        "<button class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-shadow--4dp' style='width:20%;margin-left: 4%'>评论</button>" +
+        "<button class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-shadow--4dp' style='width:20%;margin-left: 4%' onclick='dlpaper(" + index + ")'>下载</button>" +
+        "<button class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-shadow--4dp' style='width:20%;margin-left: 4%'>收藏</button></td></tr>" +
         "</tbody></table>";
     newRow.appendChild(td);
     ibody.appendChild(newRow);
