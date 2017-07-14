@@ -9,6 +9,6 @@ module.exports = {
         port: 3306,
         user: 'root',
         password: 'root',
-        database:'PT'// 前面建的user表位于这个数据库中
+        database:'paper'// 前面建的user表位于这个数据库中
     }
 };
