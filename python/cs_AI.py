@@ -20,7 +20,9 @@ while True:
 
         commit = "select Subject_ID from Subjects where Tag='cs.AI';"
         cursor.execute(commit)
-        ID = cursor.fetchall()[0][0]
+        ID = 2
+
+        # ID = cursor.fetchall()[0][0]
         # print ID
 
 

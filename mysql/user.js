@@ -43,5 +43,63 @@ module.exports = {
                 connection.release();
             });
         });
+    },
+
+
+    login_check: function (req, res, next) {
+        pool.getConnection(function(err, connection) {
+            // 获取前台页面传过来的参数
+            var param = req.query || req.params;
+
+            // 建立连接，向表中插入值
+            // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
+            connection.query($sql.login_check , [param.username, param.password], function(err, result) {
+                jsonWrite(res, result[0]["EXISTS(SELECT * FROM Users WHERE Username = '" + param.username + "' AND Password = '" + param.password + "')"]);
+                // 释放连接
+                connection.release();
+            });
+        });
+    },
+
+
+    register: function (req, res, next) {
+        pool.getConnection(function(err, connection) {
+            // 获取前台页面传过来的参数
+            var param = req.query || req.params;
+
+            // 建立连接，向表中插入值
+            // 'INSERT INTO user(id, name, age) VALUES(0,?,?)',
+            connection.query($sql.check_exist , [param.username], function(err, result) {
+                if (result[0]["EXISTS(SELECT * FROM Users WHERE Username = '" + param.username +"')"] === 1){
+                    result = {
+                        code: 221,
+                        msg: '已存在的用户名'
+                    };
+                    jsonWrite(res, result);
+                    connection.release();
+                }
+                else{
+                    connection.query($sql.register , [param.username, param.password], function(err, result) {
+                        // result = {
+                        //     code: 100,
+                        //     msg: '注册成功'
+                        // };
+
+                        if(result.affectedRows > 0) {
+                            result = {
+                                code: 100,
+                                msg: '注册成功'
+                            };
+                        }
+                       
+                        jsonWrite(res, result);
+                        connection.release();
+                    });
+                }
+
+            });
+        });
     }
+
+
 };
