@@ -5,9 +5,9 @@ INSERT INTO Papers  (Title,Address, GitHub,Abstract,Stars,Authors,Pulish_time) V
 ('fasdfds', 'fdsaf', 'fasdfds', 'fdsaf', 3, 'fdsaf', STR_TO_DATE('2014-07-10', '%Y-%m-%d'));
 
 
-INSERT INTO Subjects  (Name) VALUES 
-('sbsb'),
-('sbsbbss');
+INSERT INTO Subjects  (Tag,Name) VALUES 
+('s','sbsb'),
+('sb','sbsbbss');
 
 INSERT INTO Comments(Commenter_ID,Paper_ID,Content,Comment_time, Father_comment_ID) VALUES 
 (1,2,'大傻逼',STR_TO_DATE('2014-07-09 23:30:00', '%Y-%m-%d %H:%i:%s'), '1'),
