@@ -11,7 +11,6 @@ function winScroll(e) {
     var subtitle_container = document.getElementById("subtitle_container");
     var subtitle = document.getElementById("subtitle");
     var table = document.getElementById("table");
-    var paper_h = table.clientHeight / paper_num;
 
     document.getElementById("table_container").style.marginTop = 500 - distance + "px";
 
@@ -19,12 +18,12 @@ function winScroll(e) {
         subtitle.style.opacity = (300 - subtitle_container.clientHeight - distance) / (300 - subtitle_container.clientHeight);
     }
 
-    if (paper_num < maxium) {
-        if (distance + height - 500 - table.clientHeight > 0) {
-            paper_num += 1;
-            getpaper(maxium - paper_num + 1);
-        }
-    }
+    // if (paper_num < maxium) {
+    //     if (distance + height - 500 - table.clientHeight > 0) {
+    //         paper_num += 1;
+    //         getpaper(maxium - paper_num + 1);
+    //     }
+    // }
 
     if (200 - distance <= 0) {
         title0.style.display="";
