@@ -19,6 +19,9 @@ function login(){
           var check = req.responseText;
           if (check === '1') {
               document.getElementById("username_change").innerHTML = username;
+              document.getElementById("logout_tab").style.display="";
+              document.getElementById("register_tab").style.display="none";
+              document.getElementById("login_tab").style.display="none";
               closeLogin();
           }
           else {
@@ -71,6 +74,9 @@ function register(){
           }
           else{
             document.getElementById("username_change").innerHTML = username;
+            document.getElementById("logout_tab").style.display="";
+            document.getElementById("register_tab").style.display="none";
+            document.getElementById("login_tab").style.display="none";
             closeRegister();
           }
       }
@@ -101,3 +107,20 @@ function check_user(){
     else
         return 1
 }
+
+function logout(){
+  document.getElementById("username_change").innerHTML = "用户名";
+  document.getElementById("logout_tab").style.display="none";
+  document.getElementById("register_tab").style.display="";
+  document.getElementById("login_tab").style.display="";
+}
+
+
+
+
+
+
+
+
+
+

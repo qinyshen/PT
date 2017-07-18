@@ -2,6 +2,18 @@ var express = require('express');
 var router = express.Router();
 var user = require('../mysql/user');
 
+var session = require('express-session')
+
+var app = express()
+app.set('trust proxy', 1) // trust first proxy 
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
